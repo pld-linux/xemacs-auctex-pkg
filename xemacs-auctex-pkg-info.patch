@@ -1,17 +1,16 @@
-diff -Nur --exclude *~ auctex-9.9p/doc/auc-tex.texi auctex-9.9p.new/doc/auc-tex.texi
---- auctex-9.9p/doc/auc-tex.texi	Thu Feb 11 11:19:53 1999
-+++ auctex-9.9p.new/doc/auc-tex.texi	Fri Oct 27 13:01:29 2000
+--- auctex-10.0g.orig/doc/auc-tex.texi	2001-04-11 13:54:04.000000000 +0200
++++ auctex-10.0g/doc/auc-tex.texi	2003-11-26 18:44:07.000000000 +0100
 @@ -1,9 +1,15 @@
  \input texinfo
 -@setfilename auctex
 +@setfilename auctex.info
  @settitle AUC TeX
+-@direntry
 +@ifinfo
 +@format
 +@dircategory XEmacs Editor:
- @direntry
--* AUCTeX::      A much enhanced LaTeX mode for GNU Emacs.
-+* AUCTeX::                              A much enhanced LaTeX mode for GNU Emacs.
++@direntry 
+ * AUCTeX: (auctex).      A much enhanced LaTeX mode for GNU Emacs.
  @end direntry
 +@end format
 +@end ifinfo

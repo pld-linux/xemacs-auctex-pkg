@@ -2,14 +2,14 @@ Summary:	Basic TeX/LaTeX support
 Summary(pl):	Podstawowe wsparcie dla TeXa/LaTeXa
 Name:		xemacs-auctex-pkg
 %define 	srcname	auctex
-Version:	9.9p
-Release:	3
+Version:	10.0g
+Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
 # new versions here:
 # http://savannah.gnu.org/download/auctex/stable.pkg/%{version}/%{srcname}-%{version}.tar.gz
 Source0:	http://savannah.gnu.org/download/auctex/attic/auctex/%{srcname}-%{version}.tar.gz
-# Source0-md5:	d20c048f8f90c9281dbef4d51b707e09
+# Source0-md5:	5b115bf49f79b63b9a71dec3301c4707
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/auctex/
 BuildArch:	noarch
