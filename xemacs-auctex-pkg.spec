@@ -73,7 +73,7 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages,%{_infodir}}
 	lispdir=$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp
 perl -pi -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/tex-site.el
 
-%{__install} doc/*.info* $RPM_BUILD_ROOT%{_infodir}
+install doc/*.info* $RPM_BUILD_ROOT%{_infodir}
 
 gzip -9nf README ChangeLog
 
