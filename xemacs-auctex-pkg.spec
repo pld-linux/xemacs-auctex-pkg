@@ -69,12 +69,12 @@ pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
 	   --with-lispdir=%{_datadir}/xemacs-packages/lisp \
 	   --with-packagedir=%{_datadir}/xemacs-packages \
 	   --with-tex-input-dir="%{_datadir}/texmf/tex;%{_datadir}/texmf/bibtex/bst"
-make
+%{__make}
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 # remove .el file if corresponding .elc file exists
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
