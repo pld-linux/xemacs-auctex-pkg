@@ -3,7 +3,7 @@ Summary(pl):	Podstawowe wsparcie dla TeX/LaTeX-a
 Name:		xemacs-auctex-pkg
 %define 	srcname	auctex
 Version:	9.9p
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Editors/Emacs
 Group(de):	Applikationen/Editors/Emacs
