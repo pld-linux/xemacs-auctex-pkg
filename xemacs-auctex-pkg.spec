@@ -7,6 +7,7 @@ Release:	3
 License:	GPL
 Group:		Applications/Editors/Emacs
 Source0:	ftp://ftp.icm.edu.pl/pub/CTAN/support/auctex/%{srcname}-%{version}.tar.gz
+# Source0-md5:	d20c048f8f90c9281dbef4d51b707e09
 Patch0:		%{name}-info.patch
 URL:		http://www.iesd.auc.dk/~amanda/auctex/
 BuildArch:	noarch
