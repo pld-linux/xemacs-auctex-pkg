@@ -6,18 +6,37 @@ Version:	9.9p
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
+Group(de):	Applikationen/Editors/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
 Source0:	ftp://ftp.icm.edu.pl/pub/CTAN/support/auctex/%{srcname}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
-##URL:		http://www.xemacs.org/
+URL:		http://www.iesd.auc.dk/~amanda/auctex/
 BuildArch:	noarch
-##Conflicts:	xemacs-sumo
 Requires:	xemacs
 Requires:	xemacs-base-pkg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	xemacs
 
 %description
+AUC TeX is a comprehensive customizable integrated environment for
+writing input files for LaTeX using GNU Emacs and XEmacs.
+
+AUC TeX lets you run TeX/LaTeX and other LaTeX-related tools, such as
+a output filters or post processor from inside [X]Emacs. Especially
+"Running LaTeX" is interesting, as AUC TeX lets you browse through the
+errors TeX reported, while it moves the cursor directly to the
+reported error, and displays some documentation for that particular
+error. This will even work when the document is spread over several
+files.
+
+AUC TeX automatically indents your "LaTeX-source", not only as you
+write it -- you can also let it indent and format an entire document.
+It has a special outline feature, which can greatly help you etting
+an overview' of a document.
+
+Apart from these special features, AUC TeX provides a large range of
+handy [X]Emacs macros, which in several different ways can help you
+write your LaTeX documents fast and painlessly.
 
 %description -l pl 
 
@@ -34,18 +53,13 @@ BuildRequires:	xemacs
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages,%{_infodir}}
 
-%{__make} lispdir=$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp install
+%{__make} install \
+	lispdir=$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp
 perl -pi -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/tex-site.el
 
-mv -f  doc/*.info* $RPM_BUILD_ROOT%{_infodir}
+%{__install} doc/*.info* $RPM_BUILD_ROOT%{_infodir}
 
-
-#cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
-#mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
-#rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
-
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info* \
-	README ChangeLog 
+gzip -9nf README ChangeLog 
 
 %clean
 rm -fr $RPM_BUILD_ROOT
