@@ -6,10 +6,12 @@ Version:	9.9p
 Release:	3
 License:	GPL
 Group:		Applications/Editors/Emacs
-Source0:	ftp://ftp.icm.edu.pl/pub/CTAN/support/auctex/%{srcname}-%{version}.tar.gz
+# new versions here:
+# http://savannah.gnu.org/download/auctex/stable.pkg/%{version}/%{srcname}-%{version}.tar.gz
+Source0:	http://savannah.gnu.org/download/auctex/attic/auctex/%{srcname}-%{version}.tar.gz
 # Source0-md5:	d20c048f8f90c9281dbef4d51b707e09
 Patch0:		%{name}-info.patch
-URL:		http://www.iesd.auc.dk/~amanda/auctex/
+URL:		http://www.gnu.org/software/auctex/
 BuildArch:	noarch
 BuildRequires:	xemacs
 Requires:	xemacs
@@ -90,9 +92,10 @@ rm -fr $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_infodir}/*
+%doc README ChangeLog
 %dir %{_datadir}/xemacs-packages/lisp/auctex
 %{_datadir}/xemacs-packages/lisp/auctex/*.el*
+%dir %{_datadir}/xemacs-packages/lisp/auctex/style
 %{_datadir}/xemacs-packages/lisp/auctex/style/*.el*
 %{_datadir}/xemacs-packages/lisp/tex-site.el
-%doc README ChangeLog
+%{_infodir}/*
