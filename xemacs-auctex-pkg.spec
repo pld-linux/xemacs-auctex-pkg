@@ -12,6 +12,7 @@ Source0:	ftp://ftp.icm.edu.pl/pub/CTAN/support/auctex/%{srcname}-%{version}.tar.
 Patch0:		%{name}-info.patch
 URL:		http://www.iesd.auc.dk/~amanda/auctex/
 BuildArch:	noarch
+BuildRequires:	xemacs
 Requires:	xemacs
 Requires:	xemacs-base-pkg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
