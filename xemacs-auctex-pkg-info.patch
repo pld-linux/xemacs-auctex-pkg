@@ -1,0 +1,22 @@
+diff -Nur xemacs-auctex-pkg-1.19/man/auctex/auc-tex.texi xemacs-auctex-pkg-1.19.new/man/auctex/auc-tex.texi
+--- xemacs-auctex-pkg-1.19/man/auctex/auc-tex.texi	Wed Jan 19 13:31:00 2000
++++ xemacs-auctex-pkg-1.19.new/man/auctex/auc-tex.texi	Sun Mar 26 14:49:37 2000
+@@ -1,9 +1,16 @@
+ \input texinfo
+-@setfilename auctex
++@setfilename ../../info/auctex.info
+ @settitle AUC TeX
++
++@ifinfo
++@format
++@dircategory XEmacs Editor:
+ @direntry
+-* AUCTeX::      A much enhanced LaTeX mode for GNU Emacs.
++* AUCTeX::                              A much enhanced LaTeX mode for GNU Emacs.
+ @end direntry
++@end format
++@end ifinfo
++
+ @c footnotestyle separate
+ @c paragraphindent 2
+ @comment %**end of header 
