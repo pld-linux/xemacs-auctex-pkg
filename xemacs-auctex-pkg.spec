@@ -77,6 +77,9 @@ install doc/*.info* $RPM_BUILD_ROOT%{_infodir}
 
 gzip -9nf README ChangeLog
 
+# remove .el file if corresponding .elc file exists
+find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
+
 %clean
 rm -fr $RPM_BUILD_ROOT
 
@@ -90,7 +93,7 @@ rm -fr $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_infodir}/*
 %dir %{_datadir}/xemacs-packages/lisp/auctex
-%{_datadir}/xemacs-packages/lisp/auctex/*.elc
-%{_datadir}/xemacs-packages/lisp/auctex/style/*.elc
+%{_datadir}/xemacs-packages/lisp/auctex/*.el*
+%{_datadir}/xemacs-packages/lisp/auctex/style/*.el*
 %{_datadir}/xemacs-packages/lisp/tex-site.el
 %doc README.gz ChangeLog.gz
