@@ -53,4 +53,5 @@ rm -fr $RPM_BUILD_ROOT
 %{_infodir}/*
 %dir %{_datadir}/xemacs-packages/lisp/*
 %{_datadir}/xemacs-packages/lisp/*/*.elc
+%{_datadir}/xemacs-packages/lisp/*/tex-site.el
 %doc lisp/auctex/README.gz lisp/auctex/ChangeLog.gz 
