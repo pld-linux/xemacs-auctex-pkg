@@ -4,12 +4,12 @@
 # For more details see comments in this script
 ### EndComment
 
-Summary:	Tex editing mode for xemacs
-Summary(pl):	Tryb TeXowy dla xemacsa
+Summary: 	Basic TeX/LaTeX support.
+Summary(pl):	Basic TeX/LaTeX support.
 
 Name:    	xemacs-auctex-pkg
 %define 	srcname	auctex
-Version: 	1.17
+Version: 	1.19
 Release:	1
 
 ### Preamble
@@ -23,30 +23,13 @@ BuildArch:	noarch
 Conflicts:	xemacs-sumo
 Requires: 	xemacs
 Requires: 	xemacs-base-pkg
+Prereq:  	/usr/sbin/fix-info-dir
 ### EndPreamble
 
 %description
 
 
 %description -l pl 
-
-
-%package el
-Summary:	.el source files for XEmacs
-Summary(pl):	Pliki ¼ród³owe procedur w eLispie do XEmacsa
-
-### ElPreamble
-Group:    	Applications/Editors/Emacs
-Group(pl):	Aplikacje/Edytory/Emacs
-Requires: 	%{name} = %{version}
-### EndElPreamble
-
-
-%description el
-.el source files -- not necessary to run XEmacs
-
-%description el -l pl
-Pliki ¼ród³owe procedur w eLispie do XEmacsa.
 
 
 ### Main
@@ -60,7 +43,11 @@ cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
 install -d $RPM_BUILD_ROOT%{_infodir}
 mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
 rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info*
+gzip -9nf lisp/auctex/README lisp/auctex/ChangeLog 
+
+%clean
+rm -fr $RPM_BUILD_ROOT
 ### EndMain
 
 ### PrePost
@@ -73,7 +60,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info
 
 ### Files
 %files
+%defattr(644,root,root,755)
 %{_datadir}/xemacs-packages/etc/*
 %{_infodir}/*
-%{_datadir}/xemacs-packages/lisp/*
+%dir %{_datadir}/xemacs-packages/lisp/*
+%{_datadir}/xemacs-packages/lisp/*/*.elc
+%doc lisp/auctex/README.gz lisp/auctex/ChangeLog.gz 
 ### EndFiles
