@@ -1,20 +1,22 @@
---- auctex-10.0g.orig/doc/auc-tex.texi	2001-04-11 13:54:04.000000000 +0200
-+++ auctex-10.0g/doc/auc-tex.texi	2003-11-26 18:44:07.000000000 +0100
-@@ -1,9 +1,15 @@
+diff -urN auctex-11.53/doc/auctex.texi auctex-11.53.patch/doc/auctex.texi
+--- auctex-11.53/doc/auctex.texi	2004-08-28 23:57:47.000000000 +0200
++++ auctex-11.53.patch/doc/auctex.texi	2004-11-14 13:11:49.872932744 +0100
+@@ -1,11 +1,15 @@
  \input texinfo
 -@setfilename auctex
 +@setfilename auctex.info
- @settitle AUC TeX
--@direntry
+ @settitle AUCTeX
+-@dircategory Emacs
+-@dircategory TeX
 +@ifinfo
 +@format
 +@dircategory XEmacs Editor:
-+@direntry 
- * AUCTeX: (auctex).      A much enhanced LaTeX mode for GNU Emacs.
+ @direntry
+ * AUCTeX: (auctex).     A much enhanced TeX/LaTeX mode for Emacs.
  @end direntry
 +@end format
 +@end ifinfo
 +
  @c footnotestyle separate
  @c paragraphindent 2
- @comment %**end of header 
+ @comment %**end of header
