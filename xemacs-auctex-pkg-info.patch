@@ -1,12 +1,11 @@
-diff -Nur xemacs-auctex-pkg-1.19/man/auctex/auc-tex.texi xemacs-auctex-pkg-1.19.new/man/auctex/auc-tex.texi
---- xemacs-auctex-pkg-1.19/man/auctex/auc-tex.texi	Wed Jan 19 13:31:00 2000
-+++ xemacs-auctex-pkg-1.19.new/man/auctex/auc-tex.texi	Sun Mar 26 14:49:37 2000
-@@ -1,9 +1,16 @@
+diff -Nur --exclude *~ auctex-9.9p/doc/auc-tex.texi auctex-9.9p.new/doc/auc-tex.texi
+--- auctex-9.9p/doc/auc-tex.texi	Thu Feb 11 11:19:53 1999
++++ auctex-9.9p.new/doc/auc-tex.texi	Fri Oct 27 13:01:29 2000
+@@ -1,9 +1,15 @@
  \input texinfo
 -@setfilename auctex
-+@setfilename ../../info/auctex.info
++@setfilename auctex.info
  @settitle AUC TeX
-+
 +@ifinfo
 +@format
 +@dircategory XEmacs Editor:
