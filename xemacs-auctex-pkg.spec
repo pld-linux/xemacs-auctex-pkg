@@ -3,7 +3,7 @@ Summary(pl):	Podstawowe wsparcie dla TeXa/LaTeXa
 Name:		xemacs-auctex-pkg
 %define 	srcname	auctex
 Version:	11.53
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Editors/Emacs
 Source0:	ftp://ftp.gnu.org/pub/gnu/auctex/%{srcname}-%{version}.tar.gz
@@ -73,7 +73,7 @@ pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{make} install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 # remove .el file if corresponding .elc file exists
