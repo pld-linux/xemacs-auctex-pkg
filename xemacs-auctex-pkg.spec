@@ -6,19 +6,16 @@ Version:	11.53
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
-# new versions here:
-# http://savannah.gnu.org/download/auctex/stable.pkg/%{version}/%{srcname}-%{version}.tar.gz
 Source0:	ftp://ftp.gnu.org/pub/gnu/auctex/%{srcname}-%{version}.tar.gz
 # Source0-md5:	938ba7debc040c6bdb6d891706d17dcc
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/auctex/
-BuildArch:	noarch
-BuildRequires:	xemacs
 BuildRequires:	texinfo
+BuildRequires:	xemacs
 Requires:	xemacs
 Requires:	xemacs-base-pkg
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	xemacs
 
 %description
 AUC TeX is a comprehensive customizable integrated environment for
@@ -65,16 +62,19 @@ pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
 %patch0 -p1
 
 %build
-%configure --with-xemacs \
-	   --with-lispdir=%{_datadir}/xemacs-packages/lisp \
-	   --with-packagedir=%{_datadir}/xemacs-packages \
-	   --with-tex-input-dir="%{_datadir}/texmf/tex;%{_datadir}/texmf/bibtex/bst"
+%configure \
+	--with-xemacs \
+	--with-lispdir=%{_datadir}/xemacs-packages/lisp \
+	--with-packagedir=%{_datadir}/xemacs-packages \
+	--with-tex-input-dir="%{_datadir}/texmf/tex;%{_datadir}/texmf/bibtex/bst"
 %{__make}
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 # remove .el file if corresponding .elc file exists
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
@@ -96,4 +96,4 @@ rm -fr $RPM_BUILD_ROOT
 %dir %{_datadir}/xemacs-packages/lisp/auctex/style
 %{_datadir}/xemacs-packages/lisp/auctex/style/*.el*
 %{_datadir}/xemacs-packages/lisp/tex-site.el
-%{_infodir}/*
+%{_infodir}/*.info*
