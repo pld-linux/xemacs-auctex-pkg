@@ -73,8 +73,7 @@ pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%{makeinstall}
 
 # remove .el file if corresponding .elc file exists
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
