@@ -3,7 +3,7 @@ Summary(pl):	Podstawowe wsparcie dla TeXa/LaTeXa
 Name:		xemacs-auctex-pkg
 %define 	srcname	auctex
 Version:	11.53
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Editors/Emacs
 Source0:	ftp://ftp.gnu.org/pub/gnu/auctex/%{srcname}-%{version}.tar.gz
