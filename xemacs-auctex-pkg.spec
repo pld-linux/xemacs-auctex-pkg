@@ -75,8 +75,6 @@ perl -pi -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lis
 
 install doc/*.info* $RPM_BUILD_ROOT%{_infodir}
 
-gzip -9nf README ChangeLog
-
 # remove .el file if corresponding .elc file exists
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
 
@@ -96,4 +94,4 @@ rm -fr $RPM_BUILD_ROOT
 %{_datadir}/xemacs-packages/lisp/auctex/*.el*
 %{_datadir}/xemacs-packages/lisp/auctex/style/*.el*
 %{_datadir}/xemacs-packages/lisp/tex-site.el
-%doc README.gz ChangeLog.gz
+%doc README ChangeLog
