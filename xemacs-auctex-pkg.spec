@@ -37,7 +37,7 @@ Apart from these special features, AUC TeX provides a large range of
 handy [X]Emacs macros, which in several different ways can help you
 write your LaTeX documents fast and painlessly.
 
-%description -l pl 
+%description -l pl
 AUC TeX jest kompletnym i konfigurowalnym ¶rodowiskiem edycji plików
 ¼ród³owych LaTeX-a, dostêpnym w programach GNU Emacs i XEmacs.
 
@@ -75,7 +75,7 @@ perl -pi -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lis
 
 %{__install} doc/*.info* $RPM_BUILD_ROOT%{_infodir}
 
-gzip -9nf README ChangeLog 
+gzip -9nf README ChangeLog
 
 %clean
 rm -fr $RPM_BUILD_ROOT
@@ -93,4 +93,4 @@ rm -fr $RPM_BUILD_ROOT
 %{_datadir}/xemacs-packages/lisp/auctex/*.elc
 %{_datadir}/xemacs-packages/lisp/auctex/style/*.elc
 %{_datadir}/xemacs-packages/lisp/tex-site.el
-%doc README.gz ChangeLog.gz 
+%doc README.gz ChangeLog.gz
