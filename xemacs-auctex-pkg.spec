@@ -2,41 +2,50 @@ Summary:	Basic TeX/LaTeX support
 Summary(pl):	Basic TeX/LaTeX support
 Name:		xemacs-auctex-pkg
 %define 	srcname	auctex
-Version:	1.19
+Version:	9.9p
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
-Source0:	ftp://ftp.xemacs.org/xemacs/packages/%{srcname}-%{version}-pkg.tar.gz
+Source0:	ftp://ftp.icm.edu.pl/pub/CTAN/support/auctex/%{srcname}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
-URL:		http://www.xemacs.org/
+##URL:		http://www.xemacs.org/
 BuildArch:	noarch
-Conflicts:	xemacs-sumo
+##Conflicts:	xemacs-sumo
 Requires:	xemacs
 Requires:	xemacs-base-pkg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	xemacs
 
 %description
 
 %description -l pl 
 
 %prep
-%setup -q -c
+%setup -q -n %{srcname}-%{version}
 %patch0 -p1
 
 %build
-(cd man/auctex; awk '/^\\input texinfo/ {print FILENAME}' * | xargs makeinfo)
+(cd doc; awk '/^\\input texinfo/ {print FILENAME}' * | xargs makeinfo)
+%{__make} EMACS=xemacs
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages,%{_infodir}}
 
-cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
-mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
-rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
+%{__make} lispdir=$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp install
+perl -pi -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/tex-site.el
+
+mv -f  doc/*.info* $RPM_BUILD_ROOT%{_infodir}
+
+
+#cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
+#mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
+#rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info* \
-	lisp/auctex/README lisp/auctex/ChangeLog 
+	README ChangeLog 
 
 %clean
 rm -fr $RPM_BUILD_ROOT
@@ -49,9 +58,9 @@ rm -fr $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_datadir}/xemacs-packages%{_sysconfdir}/*
 %{_infodir}/*
-%dir %{_datadir}/xemacs-packages/lisp/*
-%{_datadir}/xemacs-packages/lisp/*/*.elc
-%{_datadir}/xemacs-packages/lisp/*/tex-site.el
-%doc lisp/auctex/README.gz lisp/auctex/ChangeLog.gz 
+%dir %{_datadir}/xemacs-packages/lisp/auctex
+%{_datadir}/xemacs-packages/lisp/auctex/*.elc
+%{_datadir}/xemacs-packages/lisp/auctex/style/*.elc
+%{_datadir}/xemacs-packages/lisp/tex-site.el
+%doc README.gz ChangeLog.gz 
