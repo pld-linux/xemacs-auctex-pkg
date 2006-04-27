@@ -59,6 +59,7 @@ Poza powy¿szymi specja³ami, AUC TeX dostarcza wiele u¿ytecznych makr,
 pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
 
 %define texhash [ ! -x %{_bindir}/texhash ] || %{_bindir}/texhash 1>&2 ;
+
 %package -n xemacs-preview-latex
 Summary:	Embedded LaTeX previewer for XEmacs
 Summary(pl):	Osadzona przegl±darka pre-renderuj±ca kod LaTeXowy w XEmacsie
@@ -70,6 +71,7 @@ Requires:	tetex-dvips
 Requires:	tetex-format-latex
 Requires:	xemacs >= 21.4.9
 Requires:	xemacs-auctex-pkg >= 11.14
+Obsoletes:	xemacs-preview-latex-pkg
 
 %description -n xemacs-preview-latex
 Does your neck hurt from turning between previewer windows and the
@@ -102,10 +104,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # movig info and dvi files that are installed not in the proper place
-install -d $RPM_BUILD_ROOT/%{_infodir}
+install -d $RPM_BUILD_ROOT%{_infodir}
 install -d $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/preview
-mv $RPM_BUILD_ROOT/%{_datadir}/xemacs-packages/info/* $RPM_BUILD_ROOT/%{_infodir}
-mv $RPM_BUILD_ROOT/%{_datadir}/texmf/doc/latex/styles/preview.dvi $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/preview
+mv $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/* $RPM_BUILD_ROOT/%{_infodir}
+mv $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/styles/preview.dvi $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/preview
 # remove .el file if corresponding .elc file exists
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
 
