@@ -2,12 +2,12 @@
 Summary:	Basic TeX/LaTeX support
 Summary(pl):	Podstawowe wsparcie dla TeXa/LaTeXa
 Name:		xemacs-auctex-pkg
-Version:	11.82
+Version:	11.83
 Release:	0.1
 License:	GPL
 Group:		Applications/Editors/Emacs
 Source0:	ftp://ftp.gnu.org/pub/gnu/auctex/%{srcname}-%{version}.tar.gz
-# Source0-md5:	a18d6ac70b332f47386980f0c4df62e6
+# Source0-md5:	19480487036f602841507c0e151674c2
 #Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/auctex/
 BuildRequires:	texinfo
