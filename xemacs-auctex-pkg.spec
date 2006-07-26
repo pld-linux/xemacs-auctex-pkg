@@ -106,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 # movig info and dvi files that are installed not in the proper place
 install -d $RPM_BUILD_ROOT%{_infodir}
 install -d $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/preview
-mv $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/* $RPM_BUILD_ROOT/%{_infodir}
+mv $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/* $RPM_BUILD_ROOT%{_infodir}
 mv $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/styles/preview.dvi $RPM_BUILD_ROOT%{_datadir}/texmf/doc/latex/preview
 # remove .el file if corresponding .elc file exists
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
