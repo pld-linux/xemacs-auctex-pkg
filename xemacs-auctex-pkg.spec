@@ -70,7 +70,7 @@ Requires:	ghostscript >= 6.51
 Requires:	tetex-dvips
 Requires:	tetex-format-latex
 Requires:	xemacs >= 21.4.9
-Requires:	xemacs-auctex-pkg >= 11.14
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	xemacs-preview-latex-pkg
 
 %description -n xemacs-preview-latex
