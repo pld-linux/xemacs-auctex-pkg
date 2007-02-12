@@ -1,6 +1,6 @@
 %define 	srcname	auctex
 Summary:	Basic TeX/LaTeX support
-Summary(pl):	Podstawowe wsparcie dla TeXa/LaTeXa
+Summary(pl.UTF-8):   Podstawowe wsparcie dla TeXa/LaTeXa
 Name:		xemacs-auctex-pkg
 Version:	11.83
 Release:	0.1
@@ -39,30 +39,30 @@ Apart from these special features, AUC TeX provides a large range of
 handy [X]Emacs macros, which in several different ways can help you
 write your LaTeX documents fast and painlessly.
 
-%description -l pl
-AUC TeX jest kompletnym i konfigurowalnym ¶rodowiskiem edycji plików
-¼ród³owych LaTeXa, dostêpnym w programach GNU Emacs i XEmacs.
+%description -l pl.UTF-8
+AUC TeX jest kompletnym i konfigurowalnym Å›rodowiskiem edycji plikÃ³w
+ÅºrÃ³dÅ‚owych LaTeXa, dostÄ™pnym w programach GNU Emacs i XEmacs.
 
-AUC TeX umo¿liwia uruchamianie narzêdzi pakietu TeX/LaTeX i innych,
-takich jak konwertery czy filtry z wewn±trz programu [X]Emacs.
-Szczególnie interesuj±ca jest opcja "Running LaTeX", poniewa¿ pozwala
-ona przegl±daæ wiadomo¶ci o b³êdach w plikach ¼ród³owych, przesuwaæ
-kursor od razu w miejsce wyst±pienia b³êdu i czytaæ pliki dokumentacji
-dotycz±ce tego b³êdu. Funkcja dzia³a poprawnie nawet dla dokumentów
-sk³adaj±cych siê z kilku plików ¼ród³owych.
+AUC TeX umoÅ¼liwia uruchamianie narzÄ™dzi pakietu TeX/LaTeX i innych,
+takich jak konwertery czy filtry z wewnÄ…trz programu [X]Emacs.
+SzczegÃ³lnie interesujÄ…ca jest opcja "Running LaTeX", poniewaÅ¼ pozwala
+ona przeglÄ…daÄ‡ wiadomoÅ›ci o bÅ‚Ä™dach w plikach ÅºrÃ³dÅ‚owych, przesuwaÄ‡
+kursor od razu w miejsce wystÄ…pienia bÅ‚Ä™du i czytaÄ‡ pliki dokumentacji
+dotyczÄ…ce tego bÅ‚Ä™du. Funkcja dziaÅ‚a poprawnie nawet dla dokumentÃ³w
+skÅ‚adajÄ…cych siÄ™ z kilku plikÃ³w ÅºrÃ³dÅ‚owych.
 
-AUC TeX w sposób automatyczny formatuje plik ¼ród³owy LaTeXa, zarówno
-na bie¿±co jak i po wpisaniu. Posiada specjaln± funkcjê "zarysu
-dokumentu", która wydatnie pomaga przegl±daæ dokumenty.
+AUC TeX w sposÃ³b automatyczny formatuje plik ÅºrÃ³dÅ‚owy LaTeXa, zarÃ³wno
+na bieÅ¼Ä…co jak i po wpisaniu. Posiada specjalnÄ… funkcjÄ™ "zarysu
+dokumentu", ktÃ³ra wydatnie pomaga przeglÄ…daÄ‡ dokumenty.
 
-Poza powy¿szymi specja³ami, AUC TeX dostarcza wiele u¿ytecznych makr,
-pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
+Poza powyÅ¼szymi specjaÅ‚ami, AUC TeX dostarcza wiele uÅ¼ytecznych makr,
+pomocnych w szybkiej i bezbolesnej edycji dokumentÃ³w LaTeXa.
 
 %define texhash [ ! -x %{_bindir}/texhash ] || %{_bindir}/texhash 1>&2 ;
 
 %package -n xemacs-preview-latex
 Summary:	Embedded LaTeX previewer for XEmacs
-Summary(pl):	Osadzona przegl±darka pre-renderuj±ca kod LaTeXowy w XEmacsie
+Summary(pl.UTF-8):   Osadzona przeglÄ…darka pre-renderujÄ…ca kod LaTeXowy w XEmacsie
 Group:		Applications/Editors/XEmacs
 Requires(post,postun):	%{_bindir}/texhash
 Requires:	ghostscript >= 6.51
@@ -78,10 +78,10 @@ Does your neck hurt from turning between previewer windows and the
 source too often? This Elisp/LaTeX package will render your displayed
 LaTeX equations right into the editing window where they belong.
 
-%description -n xemacs-preview-latex -l pl
-Czy Ciebie te¿ boli szyja od ci±g³ego przenoszenia wzroku z okienka
-podgl±du na edytor ¼ród³a dokumentu? Ten pakiet napisany w
-Elisp/LaTeXu wy¶wietli koñcow± postaæ równañ LaTeXa tam, gdzie trzeba
+%description -n xemacs-preview-latex -l pl.UTF-8
+Czy Ciebie teÅ¼ boli szyja od ciÄ…gÅ‚ego przenoszenia wzroku z okienka
+podglÄ…du na edytor ÅºrÃ³dÅ‚a dokumentu? Ten pakiet napisany w
+Elisp/LaTeXu wyÅ›wietli koÅ„cowÄ… postaÄ‡ rÃ³wnaÅ„ LaTeXa tam, gdzie trzeba
 - w oknie edytora.
 
 %prep
