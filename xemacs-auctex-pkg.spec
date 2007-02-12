@@ -1,6 +1,6 @@
 %define 	srcname	auctex
 Summary:	Basic TeX/LaTeX support
-Summary(pl.UTF-8):   Podstawowe wsparcie dla TeXa/LaTeXa
+Summary(pl.UTF-8):	Podstawowe wsparcie dla TeXa/LaTeXa
 Name:		xemacs-auctex-pkg
 Version:	11.83
 Release:	0.1
@@ -62,7 +62,7 @@ pomocnych w szybkiej i bezbolesnej edycji dokumentów LaTeXa.
 
 %package -n xemacs-preview-latex
 Summary:	Embedded LaTeX previewer for XEmacs
-Summary(pl.UTF-8):   Osadzona przeglądarka pre-renderująca kod LaTeXowy w XEmacsie
+Summary(pl.UTF-8):	Osadzona przeglądarka pre-renderująca kod LaTeXowy w XEmacsie
 Group:		Applications/Editors/XEmacs
 Requires(post,postun):	%{_bindir}/texhash
 Requires:	ghostscript >= 6.51
